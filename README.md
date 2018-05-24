@@ -26,7 +26,7 @@ Usage: index [options] <file>
 
 ### 2.2 Examples
 
-Generate a NodeJS project: Generate a NodeJS server, place its code in a folder by the name 'generatedServer', compress it and delete the folder.
+Generate a NodeJS project: Create the code of a NodeJS application, place its code in a folder by the name 'generatedServer', compress it and delete the folder with the following command.
 
 ```bash
 $ oas-generator /path/to/spec/file -n generatedServer -z
