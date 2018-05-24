@@ -54,11 +54,11 @@ Your app is running on port 8080.
 
 ## Latest release
 
-The version 1.0.0 is the latest stable version of oas-generator component. see [release note](https://github.com/isa-group/oas-generator/releases/tag/1.0.0) for details.
+The version 0.0.0 is the latest stable version of oas-generator component. see [release note](https://github.com/isa-group/oas-generator/releases/tag/0.0.0) for details.
 
 For running:
 
-- Download latest version from [0.0.5](https://github.com/isa-group/oas-generator/releases/tag/0.0.5)
+- Download latest version from [0.0.0](https://github.com/isa-group/oas-generator/releases/tag/0.0.0)
 
   ## Copyright notice
 
@@ -72,8 +72,8 @@ For technical inquiry please contact to [engineering team](./extra/about.md).
 
 [![Build Status](https://travis-ci.org/isa-group/oas-generator.svg?branch=master)](https://travis-ci.org/http://github.com/isa-group/oas-generator)
 
-The version 0.0.5 is the latest stable version of oas-generator component. see [release note](http://github.com/isa-group/oas-generator/releases/tag/0.0.5) for details.
+The version 0.0.0 is the latest stable version of oas-generator component. see [release note](http://github.com/isa-group/oas-generator/releases/tag/0.0.0) for details.
 
 For running:
 
-- Download latest version from [0.0.5](http://github.com/isa-group/oas-generator/releases/tag/0.0.5)
+- Download latest version from [0.0.0](http://github.com/isa-group/oas-generator/releases/tag/0.0.0)
