@@ -26,7 +26,7 @@ Usage: index [options] <file>
 
 ### 2.2 Examples
 
-Generate a NodeJS project: Generate a NodeJS server, place its code in a folder by the name generatedServer, compress it and delete the folder.
+Generate a NodeJS project: Generate a NodeJS server, place its code in a folder by the name 'generatedServer', compress it and delete the folder.
 
 ```bash
 $ oas-generator /path/to/spec/file -n generatedServer -z
@@ -40,16 +40,17 @@ debug: Oas-doc does not have routing property for DELETE - /pathTest -> controll
 debug: Write: deleteTest
 debug: Beautify file testServerController
 debug: ---< NodeJS project ZIP generated! >---
+$
 ```
 
-Once the folder is created: unzip it, locate into it, install dependencies and run it.
+Once the folder is created unzip it and locate into it. Install dependencies and run it by doing npm start:
 
 ```bash
 $ cd generatedServer
-generatedServer$ npm install
-generatedServer$ node index.js
+generatedServer$ npm start
 ```
-Then the app is running on port 8080.
+
+Your app is running on port 8080.
 
 ## Latest release
 
