@@ -8,7 +8,8 @@ var express = require("express");
 var bodyParser = require('body-parser')
 var app = express();
 app.use(bodyParser.json());
-var oasTools = require('https://raw.githubusercontent.com/isa-group/oas-tools/master/src/index.js?token=AYl_cGd36ELxKAEVKL3JYhz3S-i6m3sNks5bEBg4wA%3D%3D'); //This must be updated when on production! oas-tools will be inside node_modules
+var requireFromUrl = require('require-from-url/sync');
+var utils = requireFromUrl('https://raw.githubusercontent.com/isa-group/oas-tools/master/src/index.js?token=AYl_cGd36ELxKAEVKL3JYhz3S-i6m3sNks5bEBg4wA%3D%3D'); //This must be updated when on production! oas-tools will be inside node_modules
 var jsyaml = require('js-yaml');
 var serverPort = 8080;
 
