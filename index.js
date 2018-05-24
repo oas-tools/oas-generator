@@ -9,6 +9,7 @@ var validator = new ZSchema({
   ignoreUnresolvableReferences: true
 });
 
+//TODO: this is the shared file and replication would be a problem in case some functions are modified
 var requireFromUrl = require('require-from-url/sync');
 var utils = requireFromUrl("https://raw.githubusercontent.com/isa-group/oas-tools/master/src/lib/utils.js?token=AYl_cO8jpQv3zpAb1IuBqrAB-U4scU3fks5bEABAwA%3D%3D");
 
@@ -163,7 +164,7 @@ program
           "dependencies": {
             "express": "^4.16.3",
             "js-yaml": "^3.3.0",
-            //"oas-tools": "1.0.0"
+            "oas-tools": "0.0.0"
           }
         };
 
