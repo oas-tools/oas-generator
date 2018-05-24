@@ -8,8 +8,11 @@ var ZSchema = require('z-schema');
 var validator = new ZSchema({
   ignoreUnresolvableReferences: true
 });
-var utils = require("../src/lib/utils.js");
-var config = require('../src/configurations'),
+//var utils = require("../src/lib/utils.js"); //TODO: modules separated! fix this
+var requireFromUrl = require('require-from-url/sync');
+var utils = requireFromUrl("https://raw.githubusercontent.com/isa-group/oas-tools/master/src/lib/utils.js?token=AYl_cO8jpQv3zpAb1IuBqrAB-U4scU3fks5bEABAwA%3D%3D");
+
+var config = requireFromUrl('https://raw.githubusercontent.com/isa-group/oas-tools/master/src/configurations/index.js?token=AYl_cLvDvTJrTI_JI6qQH-YsrjtQCZaRks5bEAFbwA%3D%3D'),
   logger = config.logger;
 var shell = require('shelljs');
 var zipdir = require('zip-dir');
