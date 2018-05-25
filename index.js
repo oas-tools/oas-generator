@@ -52,7 +52,7 @@ function checkVersion(version) {
 program
   .arguments('<file>')
   .option('-n, --proyectName <proyectName>', 'Name for the generated folder')
-  .option('-z, --delete', 'Indicate whether the generated folder must be deleted after compression')
+  .option('-z, --generateZip', 'Generate a zip and delete the folder')
   .action(function(file) {
     if (!file) {
       console.log("You must select an input specification file!");
@@ -175,18 +175,22 @@ program
 
         shell.cd('..');
 
-        zipdir('./' + proyectName, {
-          saveTo: proyectName + '.zip'
-        }, function(err, buffer) {
-          if (err) {
-            logger.error('Compressor error: ', err);
-          } else {
-            logger.debug('---< NodeJS project ZIP generated! >---');
-            if (program.delete) { //option -z used: delete generated folder after zip generation
-              shell.rm('-r', proyectName);
+        if (program.generateZip) { //option -z used: generate zip and delete folder
+          zipdir('./' + proyectName, {
+            saveTo: proyectName + '.zip'
+          }, function(err, buffer) {
+            if (err) {
+              logger.error('Compressor error: ', err);
+            } else {
+              logger.debug('---< NodeJS project ZIP generated! >---');
             }
-          }
-        });
+          });
+          shell.rm('-r', proyectName);
+        }else{
+          logger.debug('---< NodeJS project folder generated! >---');
+        }
+
+
       } catch (err) {
         logger.error(err);
       }
