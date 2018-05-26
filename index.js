@@ -11,7 +11,7 @@ var validator = new ZSchema({
 
 //TODO: this is the shared file and replication would be a problem in case some functions are modified
 var requireFromUrl = require('require-from-url/sync');
-var utils = requireFromUrl("https://raw.githubusercontent.com/isa-group/oas-tools/master/src/lib/utils.js?token=AYl_cO8jpQv3zpAb1IuBqrAB-U4scU3fks5bEABAwA%3D%3D");
+var utils = requireFromUrl("https://raw.githubusercontent.com/isa-group/oas-tools/master/index.js?token=AYl_cFFF2gOgzCW4ROTE7btTMcqxDElSks5bEoRhwA%3D%3D");
 
 var config = require('./configurations'),
   logger = config.logger;
