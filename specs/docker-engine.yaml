@@ -305,6 +305,7 @@ paths:
       tags:
         - System
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -532,6 +533,7 @@ paths:
       tags:
         - Image
       requestBody:
+        x-name: something
         content:
           application/octet-stream:
             schema:
@@ -633,6 +635,7 @@ paths:
       tags:
         - Image
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -728,6 +731,7 @@ paths:
       tags:
         - Config
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -882,6 +886,7 @@ paths:
       tags:
         - Config
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -963,6 +968,7 @@ paths:
       tags:
         - Container
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -1821,6 +1827,7 @@ paths:
       tags:
         - Container
       requestBody:
+        x-name: something
         content:
           application/x-tar:
             schema:
@@ -2272,6 +2279,7 @@ paths:
       tags:
         - Exec
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -3487,6 +3495,7 @@ paths:
       tags:
         - Container
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -3965,6 +3974,7 @@ paths:
       tags:
         - Exec
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -4041,6 +4051,7 @@ paths:
       tags:
         - Image
       requestBody:
+        x-name: something
         content:
           text/plain:
             schema:
@@ -4216,6 +4227,7 @@ paths:
       tags:
         - Image
       requestBody:
+        x-name: something
         content:
           application/x-tar:
             schema:
@@ -5002,6 +5014,7 @@ paths:
       tags:
         - Network
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -5260,6 +5273,7 @@ paths:
       tags:
         - Network
       requestBody:
+        x-name: something
         content:
           application/octet-stream:
             schema:
@@ -5321,6 +5335,7 @@ paths:
       tags:
         - Network
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -5554,6 +5569,7 @@ paths:
       tags:
         - Node
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -5624,6 +5640,7 @@ paths:
       tags:
         - Plugin
       requestBody:
+        x-name: something
         content:
           application/x-tar:
             schema:
@@ -5769,6 +5786,7 @@ paths:
       tags:
         - Plugin
       requestBody:
+        x-name: something
         $ref: '#/components/requestBodies/PluginPullBody'
   '/plugins/{name}':
     delete:
@@ -6017,6 +6035,7 @@ paths:
       tags:
         - Plugin
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -6081,6 +6100,7 @@ paths:
       tags:
         - Plugin
       requestBody:
+        x-name: something
         $ref: '#/components/requestBodies/PluginPullBody'
   /secrets:
     get:
@@ -6188,6 +6208,7 @@ paths:
       tags:
         - Secret
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -6354,6 +6375,7 @@ paths:
       tags:
         - Secret
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -6485,6 +6507,7 @@ paths:
       tags:
         - Service
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -6859,6 +6882,7 @@ paths:
       tags:
         - Service
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -7056,6 +7080,7 @@ paths:
       tags:
         - Swarm
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -7213,6 +7238,7 @@ paths:
       tags:
         - Swarm
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -7385,6 +7411,7 @@ paths:
       tags:
         - Swarm
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -7507,6 +7534,7 @@ paths:
       tags:
         - Swarm
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -8155,6 +8183,7 @@ paths:
       tags:
         - Volume
       requestBody:
+        x-name: something
         content:
           application/json:
             schema:
@@ -8319,6 +8348,7 @@ paths:
 components:
   requestBodies:
     PluginPullBody:
+      x-name: something
       content:
         application/json:
           schema:
