@@ -49,25 +49,9 @@ module.exports.setProperty = function(propertyName, newValue) {
  */
 function _setConfigurations(options, encoding) {
 
-  if (!options) {
-    throw new Error("Configurations parameter is required");
-  } else if (typeof options == 'string') {
-    try {
-      var configString = fs.readFileSync(options, encoding);
-      var newConfigurations = jsyaml.safeLoad(configString)[process.env.NODE_ENV ? process.env.NODE_ENV : 'development'];
-    } catch (err) {
-      console.log("The specified configuration file wasn't found at " + options + ".  Default configurations will be set");
-      config.setConfigurations(path.join(__dirname, 'configs.yaml'), 'utf8');
-    }
-  } else {
-    newConfigurations = options;
-  }
+  var configString = fs.readFileSync(options, encoding);
+  var newConfigurations = jsyaml.safeLoad(configString)[process.env.NODE_ENV ? process.env.NODE_ENV : 'development'];
 
-  if (newConfigurations.controllers == undefined) { //TODO: Fix this!
-    //newConfigurations.controllers = path.join(process.cwd(), './testServer/controllers'); // for testing and development
-    newConfigurations.controllers = path.join(process.cwd(), './controllers'); // for production (document that if no controller is specified then 'node' must be done wher /controllers is)
-  }
-  //If newConfigurations does indeed contain 'controllers', it will be initialized inside the following lop:
   for (var c in newConfigurations) {
     this.setProperty(c, newConfigurations[c]);
   }
