@@ -6,13 +6,11 @@ var path = require('path');
 var jsyaml = require('js-yaml');
 var ZSchema = require('z-schema');
 var validator = new ZSchema({
-  ignoreUnresolvableReferences: true
+  ignoreUnresolvableReferences: true,
+  ignoreUnknownFormats: true
 });
 
-//TODO: this is the shared file and replication would be a problem in case some functions are modified
-var requireFromUrl = require('require-from-url/sync');
-//var utils = requireFromUrl("https://raw.githubusercontent.com/isa-group/oas-tools/master/lib/utils.js?token=AYl_cD2Wg7s7nQbzImNMmkEd_ytssbC5ks5bEorpwA%3D%3D");
-var utils = require('C:/Users/ipelu/OneDrive/Documentos/GitHub/oas-tools/lib/utils.js');
+var utils = require('./lib/utils.js');
 
 var config = require('./configurations'),
   logger = config.logger;
@@ -22,8 +20,8 @@ var touch = require("touch");
 var beautify = require('js-beautify').js;
 const semver = require('semver')
 
-var schemaV3 = fs.readFileSync(path.join(__dirname, './schemas/openapi-3.0.json'), 'utf8');
-schemaV3 = JSON.parse(schemaV3);
+var schemaV3 = fs.readFileSync(path.join(__dirname, './schemas/openapi-3.0.yaml'), 'utf8');
+schemaV3 = jsyaml.safeLoad(schemaV3);
 
 /**
  * Generates a valid value for package.json's name property:

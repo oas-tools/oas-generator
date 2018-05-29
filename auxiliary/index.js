@@ -17,7 +17,7 @@ var oasDoc = jsyaml.safeLoad(spec);
 
 var options_object = {
   controllers: path.join(__dirname, './controllers'),
-  loglevel: 12,
+  loglevel: 'info',
   strict: false,
   router: true,
   validator: true
@@ -38,5 +38,3 @@ app.get('/info', function(req, res) {
     name: oasDoc.info.title
   });
 });
-
-module.exports = app;
