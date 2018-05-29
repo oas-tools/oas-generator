@@ -40,6 +40,7 @@ oas-generator/generatedServer$ npm start
 ```
 
 Your app is running on port 8080.
+You can try the url [http://www.localhost:8080/v1.33/volumes](http://www.localhost:8080/v1.33/volumes)
 
 ## Latest release
 
