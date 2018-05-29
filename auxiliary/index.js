@@ -5,8 +5,8 @@ var fs = require('fs'),
   http = require('http');
 
 var express = require("express");
-var bodyParser = require('body-parser')
 var app = express();
+var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 var oasTools = require('oas-tools');
 var jsyaml = require('js-yaml');
