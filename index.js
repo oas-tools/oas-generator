@@ -9,8 +9,7 @@ var validator = new ZSchema({
   ignoreUnresolvableReferences: true,
   ignoreUnknownFormats: true
 });
-
-var utils = require('./lib/utils.js');
+var nameValidator = require('validator');
 
 var config = require('./configurations'),
   logger = config.logger;
@@ -22,6 +21,31 @@ const semver = require('semver')
 
 var schemaV3 = fs.readFileSync(path.join(__dirname, './schemas/openapi-3.0.yaml'), 'utf8');
 schemaV3 = jsyaml.safeLoad(schemaV3);
+
+
+/**
+ * Generates a valid name, according to value of nameFor.
+ * @param {string} input - String to generate a name from.
+ * @param {string} nameFor - possible values are controller, function, variable.
+ */
+function generateName(input, nameFor) {
+  var chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789';
+  var name = nameValidator.whitelist(input, chars)
+  switch (nameFor) {
+    case "controller":
+      name += "Controller";
+      break;
+    case "function":
+      name = "func" + name;
+      break;
+    case "variable":
+      name = "var" + name;
+      break;
+    case undefined: //'nameFor' is undefined: just normalize
+      break;
+  }
+  return name;
+}
 
 /**
  * Generates a valid value for package.json's name property:
@@ -95,8 +119,7 @@ program
         }));
 
         shell.exec('mkdir utils');
-        shell.cp(__dirname + '/auxiliary/writer.js', './utils/writer.js');
-
+        
         shell.exec('mkdir controllers');
         var paths = oasDoc.paths;
         var opId;
