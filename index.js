@@ -137,6 +137,7 @@ program
           "license": "Unlicense",
           "private": true,
           "dependencies": {
+            "body-parser": "^1.18.3",
             "express": "^4.16.3",
             "js-yaml": "^3.3.0",
             "oas-tools": "1.0.0"
