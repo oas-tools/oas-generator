@@ -190,6 +190,7 @@ program
           }
         }
 
+        /* beautify files */
         for (var i = 0; i < controller_files.length; i++) {
           logger.debug("Beautify file " + controller_files[i]);
           var data = fs.readFileSync(process.cwd() + '/controllers/' + controller_files[i] + ".js", 'utf8');
@@ -199,9 +200,8 @@ program
           }));
         }
 
-
+        /* create zip or dir */
         shell.cd('..');
-
         if (program.generateZip) { //option -z used: generate zip and delete folder
           zipdir('./' + proyectName, {
             saveTo: proyectName + '.zip'

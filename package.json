@@ -26,6 +26,7 @@
     "semver": "^5.5.0",
     "shelljs": "^0.8.2",
     "touch": "^3.1.0",
+    "validator": "^10.3.0",
     "winston": "^2.4.2",
     "z-schema": "^3.22.0",
     "zip-dir": "^1.0.2"
