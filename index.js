@@ -73,7 +73,7 @@ function checkVersion(version) {
 
 program
   .arguments('<file>')
-  .option('-n, --proyectName <proyectName>', 'Name for the generated folder')
+  .option('-n, --projectName <projectName>', 'Name for the generated folder')
   .option('-z, --generateZip', 'Generate a zip and delete the folder')
   .action(function(file) {
     if (!file) {
@@ -93,19 +93,19 @@ program
           logger.error('oasDoc is not valid: ' + JSON.stringify(validator.getLastErrors()));
           process.exit();
         }
-        var proyectName = "nodejs-server-generated";
-        if (program.proyectName) { // TODO: fix issues with program parameters
-          proyectName = program.proyectName;
-          if (!/^[a-zA-Z0-9-_]+$/.test(proyectName)) {
-            logger.error("Provided name ( + " + proyectName + ") must not have spaces, slashes or : * ? < > | ");
+        var projectName = "nodejs-server-generated";
+        if (program.projectName) { // TODO: fix issues with program parameters
+          projectName = program.projectName;
+          if (!/^[a-zA-Z0-9-_]+$/.test(projectName)) {
+            logger.error("Name must only contain alphabetic characters, numbers and dashes.");
             process.exit();
           } else {
-            logger.debug("Valid provided proyect name: " + proyectName);
+            logger.debug("Valid provided project name: " + projectName);
           }
         }
 
-        shell.exec('mkdir ' + proyectName);
-        shell.cd(proyectName);
+        shell.exec('mkdir ' + projectName);
+        shell.cd(projectName);
 
         /* create generic files */
         shell.cp(__dirname + '/auxiliary/README.md', './README.md');
@@ -204,8 +204,8 @@ program
         /* create zip or dir */
         shell.cd('..');
         if (program.generateZip) { //option -z used: generate zip and delete folder
-          zipdir('./' + proyectName, {
-            saveTo: proyectName + '.zip'
+          zipdir('./' + projectName, {
+            saveTo: projectName + '.zip'
           }, function(err, buffer) {
             if (err) {
               logger.error('Compressor error: ', err);
@@ -213,7 +213,7 @@ program
               logger.debug('---< NodeJS project ZIP generated! >---');
             }
           });
-          shell.rm('-r', proyectName);
+          shell.rm('-r', projectName);
         } else {
           logger.debug('---< NodeJS project folder generated! >---');
         }
