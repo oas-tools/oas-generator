@@ -50,20 +50,10 @@ For running:
 
 - Download latest version from [0.0.0](https://github.com/isa-group/oas-generator/releases/tag/0.0.0)
 
-  ## Copyright notice
+## License
 
-**oas-generator** is open-source software available under the GNU General Public License (GPL) version 3 (GPL v3).
+Copyright 2018, [ISA Group](http://www.isa.us.es), [University of Sevilla](http://www.us.es)
 
-All including documentation and code are copyrighted and the copyright is owned by [ISA Group](http://www.isa.us.es), [University of Sevilla](http://www.us.es), unauthorized reproduction or distribution of this copyrighted work is illegal. For commercial licensing terms, please [contact](./extra/contact.md) for any inquiry.
+Licensed under the **Apache License, Version 2.0** (the "[License](./LICENSE)"); you may not use this file except in compliance with the License. You may obtain a copy of the License at apache.org/licenses/LICENSE-2.0
 
-For technical inquiry please contact to [engineering team](./extra/about.md).
-
-## Latest release
-
-[![Build Status](https://travis-ci.org/isa-group/oas-generator.svg?branch=master)](https://travis-ci.org/http://github.com/isa-group/oas-generator)
-
-The version 0.0.0 is the latest stable version of oas-generator component. see [release note](http://github.com/isa-group/oas-generator/releases/tag/0.0.0) for details.
-
-For running:
-
-- Download latest version from [0.0.0](http://github.com/isa-group/oas-generator/releases/tag/0.0.0)
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.

@@ -8,7 +8,7 @@
     "lint": "eslint index.js auxiliary/**/.js configurations/**/*.js"
   },
   "author": "Ignacio Peluaga - ISAgroup",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bin": {
     "oas-generator": "./index.js"
   },
