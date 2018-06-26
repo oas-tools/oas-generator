@@ -94,7 +94,7 @@ program
           process.exit();
         }
         var projectName = "nodejs-server-generated";
-        if (program.projectName) { // TODO: fix issues with program parameters
+        if (program.projectName) { // TODO: fix issues with program parameters...is the camel-case conversion the problem?? see commander npm docu
           projectName = program.projectName;
           if (!/^[a-zA-Z0-9-_]+$/.test(projectName)) {
             logger.error("Name must only contain alphabetic characters, numbers and dashes.");
@@ -113,8 +113,6 @@ program
         shell.cp(__dirname + '/auxiliary/index.js', './index.js');
 
         shell.exec('mkdir .oas-generator && echo 1.0.0 > .oas-generator/VERSION');
-
-        shell.exec('echo # Oas-generator Ignore > .oas-generator-ignore');
 
         shell.exec('mkdir api');
         fs.writeFileSync('./api/oas-doc.yaml', beautify(JSON.stringify(oasDoc), {
