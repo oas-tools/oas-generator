@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "test:tdd": "mocha -w",
-    "lint": "eslint index.js auxiliary/**/.js configurations/**/*.js",
+    "lint": "eslint index.js auxiliary/**/*.js configurations/**/*.js",
     "coverage": "nyc npm test"
   },
   "author": "Ignacio Peluaga - ISAgroup",
