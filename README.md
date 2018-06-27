@@ -31,26 +31,19 @@ Usage: index [options] <file>
 Generate a NodeJS project: The following command wil create the code of a NodeJS application and place its code in a folder by the name 'generatedServer'.
 
 ```bash
-oas-generator$ oas-generator specs/docker-engine.yaml -n generatedServer
+$ oas-generator specs/docker-engine.yaml -n generatedServer
 ```
 
 Once the folder is created locate into it. Install dependencies and run it by doing npm start:
 
 ```bash
-oas-generator$ cd generatedServer
-oas-generator/generatedServer$ npm start
+$ cd generatedServer
+$ npm start
 ```
 
 Your app is running on port 8080.
-You can try the url [http://www.localhost:8080/v1.33/volumes](http://www.localhost:8080/v1.33/volumes)
+You can try the url [http://localhost:8080/v1.33/volumes](http://localhost:8080/v1.33/volumes)
 
-## Latest release
-
-The version 0.0.0 is the latest stable version of oas-generator component. see [release note](https://github.com/isa-group/oas-generator/releases/tag/0.0.0) for details.
-
-For running:
-
-- Download latest version from [0.0.0](https://github.com/isa-group/oas-generator/releases/tag/0.0.0)
 
 ## License
 
