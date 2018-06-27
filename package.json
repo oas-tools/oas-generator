@@ -4,8 +4,10 @@
   "description": "OAS code generator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint index.js auxiliary/**/.js configurations/**/*.js"
+    "test": "mocha",
+    "test:tdd": "mocha -w",
+    "lint": "eslint index.js auxiliary/**/.js configurations/**/*.js",
+    "coverage": "nyc npm test"
   },
   "author": "Ignacio Peluaga - ISAgroup",
   "license": "Apache-2.0",
@@ -33,6 +35,20 @@
     "zip-dir": "^1.0.2"
   },
   "devDependencies": {
-    "eslint": "^4.19.1"
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
+  },
+  "nyc": {
+    "exclude": [
+      "node_modules",
+      "test/**/*.js"
+    ],
+    "reporter": [
+      "json",
+      "html",
+      "text"
+    ]
   }
 }

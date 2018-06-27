@@ -1,8 +1,8 @@
 'use strict';
 
 var fs = require('fs'),
-  path = require('path'),
-  http = require('http');
+    http = require('http'),
+    path = require('path');
 
 var express = require("express");
 var app = express();
