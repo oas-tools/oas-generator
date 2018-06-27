@@ -44,7 +44,6 @@ $ npm start
 Your app is running on port 8080.
 You can try the url [http://localhost:8080/v1.33/volumes](http://localhost:8080/v1.33/volumes)
 
-
 ## License
 
 Copyright 2018, [ISA Group](http://www.isa.us.es), [University of Sevilla](http://www.us.es)
