@@ -5,6 +5,7 @@ module.exports = {
     },
     "extends": "eslint:recommended",
     "rules": {
+        "no-console": "off",
         "accessor-pairs": "error",
         "array-bracket-newline": "off",
         "array-bracket-spacing": "error",
@@ -100,11 +101,11 @@ module.exports = {
         "max-statements": "off",
         "max-statements-per-line": "error",
         "multiline-comment-style": "error",
-        "multiline-ternary": "error",
+        "multiline-ternary": "off",
         "new-cap": "error",
         "new-parens": "error",
         "newline-after-var": [
-            "error",
+            "off",
             "never"
         ],
         "newline-before-return": "off",
@@ -168,7 +169,7 @@ module.exports = {
                 "allowForLoopAfterthoughts": true
             }
         ],
-        "no-process-env": "error",
+        "no-process-env": "off",
         "no-process-exit": "off",
         "no-proto": "error",
         "no-prototype-builtins": "error",
@@ -188,7 +189,7 @@ module.exports = {
         "no-sync": "off",
         "no-tabs": "error",
         "no-template-curly-in-string": "error",
-        "no-ternary": "error",
+        "no-ternary": "off",
         "no-throw-literal": "error",
         "no-trailing-spaces": "error",
         "no-undef-init": "error",
@@ -236,7 +237,7 @@ module.exports = {
         "quotes": "off",
         "radix": "error",
         "require-await": "error",
-        "require-jsdoc": "error",
+        "require-jsdoc": "off",
         "rest-spread-spacing": "error",
         "semi": "off",
         "semi-spacing": [
@@ -263,7 +264,7 @@ module.exports = {
         "space-unary-ops": "error",
         "spaced-comment": "off",
         "strict": [
-            "error",
+            "off",
             "never"
         ],
         "switch-colon-spacing": "error",
