@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/isa-group/oas-generator.svg?branch=master)](https://travis-ci.org/isa-group/oas-generator)
 [![dependencies Status](https://david-dm.org/isa-group/oas-generator/status.svg)](https://david-dm.org/isa-group/oas-generator)
+[![codecov](https://codecov.io/gh/isa-group/oas-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/isa-group/oas-generator)
 
 NodeJS API scaffolding based on OpenAPI Specifications (v3) compatible with servers generated with swagger tool suite
 
