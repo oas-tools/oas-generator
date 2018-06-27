@@ -204,7 +204,7 @@ program
         if (program.generateZip) { //option -z used: generate zip and delete folder
           zipdir('./' + projectName, {
             saveTo: projectName + '.zip'
-          }, function(err, buffer) {
+          }, function(err, buffer) {  //eslint-disable-line
             if (err) {
               logger.error('Compressor error: ', err);
             } else {
