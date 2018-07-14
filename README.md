@@ -43,7 +43,7 @@ $ cd generatedServer
 $ npm start
 ```
 
-Your app is running on port 8080.
+Now your app is running on port 8080.
 You can try the url [http://localhost:8080/v1.33/volumes](http://localhost:8080/v1.33/volumes)
 
 ## License
