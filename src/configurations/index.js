@@ -69,19 +69,24 @@ var customLevels = {
   }
 };
 
-winston.emitErrs = true;
+const customFormat = winston.format.printf(info => {
+  return `${info.timestamp} ${info.level}: ${info.message}`;
+})
 
 function consoleLogger() {
-  module.exports.logger = new winston.Logger({
+  module.exports.logger = winston.createLogger({
     levels: customLevels.levels,
-    colors: customLevels.colors,
     transports: [
       new winston.transports.Console({
         level: config.loglevel,
         handleExceptions: true,
         json: false,
-        colorize: true,
-        timestamp: true
+        format: winston.format.combine(
+          winston.format.colorize(),
+          winston.format.timestamp(),
+          winston.format.splat(),
+          customFormat
+        )
       })
     ],
     exitOnError: false
@@ -89,24 +94,30 @@ function consoleLogger() {
 }
 
 if (config.logfile != undefined) {
-  module.exports.logger = new winston.Logger({
+  module.exports.logger = winston.createLogger({
     levels: customLevels.levels,
-    colors: customLevels.colors,
     transports: [
       new winston.transports.File({
         level: config.loglevel,
         filename: config.logfile,
         handleExceptions: true,
-        json: false,
         maxsize: 5242880, //5MB
-        colorize: false
+        format: winston.format.combine(
+          winston.format.timestamp(),
+          winston.format.splat(),
+          customFormat
+        )
       }),
       new winston.transports.Console({
         level: config.loglevel,
         handleExceptions: true,
         json: false,
-        colorize: true,
-        timestamp: true
+        format: winston.format.combine(
+          winston.format.colorize(),
+          winston.format.timestamp(),
+          winston.format.splat(),
+          customFormat
+        )
       })
     ],
     exitOnError: false
@@ -114,3 +125,5 @@ if (config.logfile != undefined) {
 } else {
   consoleLogger();
 }
+
+winston.addColors(customLevels.colors);

@@ -2,6 +2,7 @@
 
 var program = require('commander');
 var fs = require('fs');
+var rimraf = require('rimraf');
 var path = require('path');
 var jsyaml = require('js-yaml');
 var ZSchema = require('z-schema');
@@ -13,7 +14,6 @@ var nameValidator = require('validator');
 
 var config = require('./configurations'),
   logger = config.logger;
-var shell = require('shelljs');
 var zipdir = require('zip-dir');
 var beautify = require('js-beautify').js;
 const semver = require('semver')
@@ -104,17 +104,18 @@ program
           }
         }
 
-        shell.exec('mkdir ' + projectName);
-        shell.cd(projectName);
+        if (!fs.existsSync(projectName)) fs.mkdirSync(projectName);
+        process.chdir(projectName);
 
         /* create generic files */
-        shell.cp(__dirname + '/auxiliary/README.md', './README.md');
+        fs.copyFileSync(__dirname + '/auxiliary/README.md', './README.md');
 
-        shell.cp(__dirname + '/auxiliary/index.js', './index.js');
+        fs.copyFileSync(__dirname + '/auxiliary/index.js', './index.js');
 
-        shell.exec('mkdir .oas-generator && echo 1.0.0 > .oas-generator/VERSION');
+        if (!fs.existsSync('.oas-generator')) fs.mkdirSync('.oas-generator');
+        fs.writeFileSync('.oas-generator/VERSION', '1.0.0');
 
-        shell.exec('mkdir api');
+        if (!fs.existsSync('api')) fs.mkdir('api');
         fs.writeFileSync('./api/oas-doc.yaml', beautify(JSON.stringify(oasDoc), {
           indent_size: 2,
           space_in_empty_paren: true
@@ -147,7 +148,7 @@ program
         }));
 
         /* create unique files: controllers and services */
-        shell.exec('mkdir controllers');
+        if (!fs.existsSync('controllers')) fs.mkdirSync('controllers');
         var paths = oasDoc.paths;
         var opId;
         var controllerName;
@@ -200,7 +201,7 @@ program
         }
 
         /* create zip or dir */
-        shell.cd('..');
+        process.chdir('..');
         if (program.generateZip) { //option -z used: generate zip and delete folder
           zipdir('./' + projectName, {
             saveTo: projectName + '.zip'
@@ -211,7 +212,7 @@ program
               logger.debug('---< NodeJS project ZIP generated! >---');
             }
           });
-          shell.rm('-r', projectName);
+          rimraf.sync(projectName);
         } else {
           logger.debug('---< NodeJS project folder generated! >---');
         }
