@@ -115,7 +115,7 @@ program
         if (!fs.existsSync('.oas-generator')) fs.mkdirSync('.oas-generator');
         fs.writeFileSync('.oas-generator/VERSION', '1.0.0');
 
-        if (!fs.existsSync('api')) fs.mkdir('api');
+        if (!fs.existsSync('api')) fs.mkdirSync('api');
         fs.writeFileSync('./api/oas-doc.yaml', beautify(JSON.stringify(oasDoc), {
           indent_size: 2,
           space_in_empty_paren: true
