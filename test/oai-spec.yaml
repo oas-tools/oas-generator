@@ -1,0 +1,335 @@
+openapi: "3.0.0"
+servers:
+  - url: 'http://localhost:8080/api/v1'
+info:
+  version: 1.0.0
+  title: Valid specification file
+  license:
+    name: MIT
+paths:
+  /paramTestsQuery:
+    get:
+      summary: This path is only for tests
+      operationId: paramTestsQuery
+      tags:
+        - pets
+      parameters:
+        - name: integerParam
+          in: query
+          description: Integer parameter to test validation
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: booleanParam
+          in: query
+          description: Boolean parameter to test validation
+          required: true
+          schema:
+            type: boolean
+        - name: stringParam
+          in: query
+          description: string parameter to test validation
+          required: true
+          schema:
+            type: string
+        - name: doubleParam
+          in: query
+          description: string parameter to test validation
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: An paged array of pets
+          headers:
+            x-next:
+              description: A link to the next page of responses
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      x-router-controller: "petsController"
+      #x-router-controller: "Default"
+  /paramTestsPath/{integerParam}/{booleanParam}/{stringParam}/{doubleParam}:
+    get:
+      summary: This path is only for tests
+      operationId: paramTestsPath
+      tags:
+        - pets
+      parameters:
+        - name: integerParam
+          in: path
+          description: Integer parameter to test validation
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: booleanParam
+          in: path
+          description: Boolean parameter to test validation
+          required: true
+          schema:
+            type: boolean
+        - name: stringParam
+          in: path
+          description: string parameter to test validation
+          required: true
+          schema:
+            type: string
+        - name: doubleParam
+          in: path
+          description: string parameter to test validation
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: An paged array of pets
+          headers:
+            x-next:
+              description: A link to the next page of responses
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      x-router-controller: "petsController"
+      #x-router-controller: "Default"
+  /responseBodyTest:
+    get:
+      summary: should return an object with both right and wrong properties
+      operationId: responseBodyTest
+      tags:
+        - pets
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseTest"
+      x-router-controller: "petsController"
+  /pets:
+    get:
+      summary: List all pets
+      operationId: listPets
+      tags:
+        - pets
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: An paged array of pets
+          headers:
+            x-next:
+              description: A link to the next page of responses
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      #x-router-controller: "petsController"
+      #x-router-controller: "Default"
+    post:
+      summary: Create a pet
+      operationId: createPets
+      tags:
+        - pets
+      requestBody:
+        description: Pet to add to the store
+        x-name: pet
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pet'
+      responses:
+        '201':
+          description: Update status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      #x-router-controller: "petsController"
+      #x-router-controller: "Default"
+    delete:
+        description: deletes all the pets
+        operationId: deletePets
+        responses:
+          '204':
+            description: pets deleted
+          default:
+            description: unexpected error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+        #x-router-controller: "petsController"
+        #x-router-controller: "Default"
+  /pets/{petId}:
+    get:
+      summary: Info for a specific pet
+      operationId: showPetById
+      tags:
+        - pets
+      parameters:
+        - name: petId
+          in: path
+          required: true
+          description: The id of the pet to retrieve
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pet"
+        '404':
+          description: pet not found
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      #x-router-controller: "petsController"
+      #x-router-controller: "Default"
+    put:
+      description: updates a pet based on its petId
+      operationId: updatePet
+      parameters:
+          - name: petId
+            in: path
+            description: ID of pet to update
+            required: true
+            schema:
+              type: integer
+              format: int64
+      requestBody:
+        description: Pet to update
+        x-name: pet
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pet'
+      responses:
+          '200':
+            description: pet updated
+          '404':
+            description: pet not found
+          default:
+            description: unexpected error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+      #x-router-controller: "petsController"
+      #x-router-controller: "Default"
+    delete:
+      description: deletes a single pet based on the ID supplied
+      operationId: deletePet
+      parameters:
+        - name: petId
+          in: path
+          required: true
+          description: The id of the pet to delete
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: pet deleted
+        '404':
+          description: pet not found
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      #x-router-controller: "petsController"
+      #x-router-controller: "Default"
+components:
+  schemas:
+    ResponseTest:
+      type: array
+      items:
+        $ref: "#/components/schemas/TestObject"
+    TestObject:
+      required:
+        - integerProperty
+        - booleanProperty
+        - stringProperty
+        - doubleProperty
+      properties:
+        integerProperty:
+          type: integer
+        booleanProperty:
+          type: boolean
+        stringProperty:
+          type: string
+        doubleProperty:
+          type: number
+    Pet:
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        tag:
+          type: string
+    Pets:
+      type: array
+      items:
+        $ref: "#/components/schemas/Pet"
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

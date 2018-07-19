@@ -4,9 +4,9 @@
   "description": "OAS code generator",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha",
-    "test:tdd": "mocha -w",
-    "lint": "eslint src/**/*.js",
+    "test": "mocha ./test/basic.js",
+    "test:tdd": "mocha ./test/basic.js -w",
+    "lint": "eslint src/**/*.js test/**/*.js",
     "coverage": "nyc npm test",
     "start": "node src/index.js"
   },
