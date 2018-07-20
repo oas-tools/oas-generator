@@ -119,8 +119,8 @@ describe('Server generation without input file', () => {
     });
 });
 
-/*describe('Compressed server generation', () => {
-    before(() => {
+describe('Compressed server generation', () => {
+    before((done) => {
         generate.configure(options_object);
         if (fs.existsSync(path.join(__dirname, '..', cmd.projectName))) {
             rimraf.sync(path.join(__dirname, '..', cmd.projectName));
@@ -131,17 +131,19 @@ describe('Server generation without input file', () => {
         const newCmd = cmd;
         cmd.generateZip = true;
         generate.generateServer(file, newCmd);
+        // This timeout waits for the ZIP file to be created
+        setTimeout(done, 1500);
     });
 
     after(() => {
         rimraf.sync(path.join(__dirname, '..', cmd.projectName + '.zip'));
     });
 
-    it('A ZIP file is created', () => {
+    it('A ZIP file is created', function() {
         fs.existsSync(path.join(__dirname, '..', cmd.projectName + '.zip')).should.equal(true);
     });
 
     it('The folder is removed', () => {
         fs.existsSync(path.join(__dirname, '..', cmd.projectName)).should.equal(false);
     });
-});*/
+});

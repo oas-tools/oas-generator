@@ -98,7 +98,9 @@ function generateServer(file, cmd) {
         }
       }
 
-      if (!fs.existsSync(projectName)) fs.mkdirSync(projectName);
+      if (!fs.existsSync(projectName)) {
+        fs.mkdirSync(projectName);
+      }
       process.chdir(projectName);
 
       /* create generic files */
@@ -106,10 +108,14 @@ function generateServer(file, cmd) {
 
       fs.copyFileSync(__dirname + '/auxiliary/index.js', './index.js');
 
-      if (!fs.existsSync('.oas-generator')) fs.mkdirSync('.oas-generator');
+      if (!fs.existsSync('.oas-generator')) {
+        fs.mkdirSync('.oas-generator');
+      }
       fs.writeFileSync('.oas-generator/VERSION', '1.0.0');
 
-      if (!fs.existsSync('api')) fs.mkdirSync('api');
+      if (!fs.existsSync('api')) {
+        fs.mkdirSync('api');
+      }
       fs.writeFileSync('./api/oas-doc.yaml', beautify(JSON.stringify(oasDoc), {
         indent_size: 2,
         space_in_empty_paren: true
@@ -142,7 +148,9 @@ function generateServer(file, cmd) {
       }));
 
       /* create unique files: controllers and services */
-      if (!fs.existsSync('controllers')) fs.mkdirSync('controllers');
+      if (!fs.existsSync('controllers')) {
+        fs.mkdirSync('controllers');
+      }
       var paths = oasDoc.paths;
       var opId;
       var controllerName;
@@ -225,6 +233,6 @@ function configure(options) {
 }
 
 module.exports = {
-    generateServer: generateServer,
-    configure: configure
+    generateServer: generateServer, // eslint-disable-line
+    configure: configure // eslint-disable-line
 };
