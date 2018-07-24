@@ -4,7 +4,9 @@
 [![dependencies Status](https://david-dm.org/isa-group/oas-generator/status.svg)](https://david-dm.org/isa-group/oas-generator)
 [![codecov](https://codecov.io/gh/isa-group/oas-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/isa-group/oas-generator)
 
-NodeJS API scaffolding based on OpenAPI Specifications (v3) compatible with servers generated with swagger tool suite
+[![NPM](https://nodei.co/npm/oas-generator.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/oas-generator/)
+
+NodeJS API scaffolding based on OpenAPI Specifications 3.x compatible with servers generated with the swagger-tool suite.
 
 ## 1\. Install oas-generator
 
