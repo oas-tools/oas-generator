@@ -19,7 +19,7 @@
     "url": "git+https://github.com/isa-group/oas-generator.git"
   },
   "bin": {
-    "oas-generator": "./index.js"
+    "oas-generator": "./src/index.js"
   },
   "dependencies": {
     "archiver": "^2.1.1",
