@@ -25,8 +25,8 @@ Usage: index [options] <file>
 
   Options:
 
-    -n, --proyectName <proyectName>  Name for the generated folder
-    -z, --delete                     Indicate whether the generated folder must be deleted after compression
+    -n, --projectName <projectName>  Name for the generated folder
+    -z, --generateZip                Indicate whether the generated folder must be deleted after compression
     -h, --help                       output usage information
 ```
 
