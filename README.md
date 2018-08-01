@@ -37,7 +37,7 @@ Usage: index [options] <file>
 
 ### 2.2 Examples
 
-Generate a NodeJS project: The following command wil create the code of a NodeJS application and place its code in a folder by the name 'generatedServer'.
+Generate a NodeJS project: The following command wil create the code of a NodeJS application based on the OpenAPI Spec 3.x 'docker-engine.yaml' and place its code in a folder by the name 'generatedServer'.
 
 ```bash
 $ oas-generator specs/docker-engine.yaml -n generatedServer
@@ -52,6 +52,11 @@ $ npm start
 
 Now your app is running on port 8080.
 You can try the url [http://localhost:8080/v1.33/volumes](http://localhost:8080/v1.33/volumes)
+
+In the folder 'controllers' there will be a set of js files with the templates for each method specified in the spec that should be completed to have a fully working API.
+
+Happy coding! 
+
 
 ## License
 
