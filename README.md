@@ -6,7 +6,8 @@
 
 [![NPM](https://nodei.co/npm/oas-generator.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/oas-generator/)
 
-NodeJS API scaffolding based on OpenAPI Specifications 3.x compatible with servers generated with the swagger-tool suite.
+This module provides NodeJS RESTfull APIs scaffolding based OpenAPI 3.x specs using [oas-tools](https://github.com/isa-group/oas-tools) and [express](https://github.com/expressjs/express). It is compatible with servers generated with the swagger-tool suite to help in the transition from pre-existing servers based on 2.x specs.
+
 
 ## 1\. Install oas-generator
 
