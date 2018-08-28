@@ -22,7 +22,7 @@
     "oas-generator": "./src/index.js"
   },
   "dependencies": {
-    "archiver": "^2.1.1",
+    "archiver": "^3.0.0",
     "co-prompt": "^1.0.0",
     "commander": "^2.16.0",
     "fs": "0.0.2",
