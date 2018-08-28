@@ -1,5 +1,6 @@
 openapi: 3.0.0
-servers: []
+servers:
+  - url: 'http://localhost:8080/'
 info:
   description: Sos API contains information about Spain's 2016 general elections results.
   contact:

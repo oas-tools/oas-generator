@@ -6,6 +6,9 @@
         },
         {
             "url": "http://openapi-converter.herokuapp.com/api/v1"
+        },
+        {
+            "url": "http://localhost:8080/api/v1"
         }
     ],
     "info": {
@@ -24,7 +27,7 @@
         "termsOfService": "https://opensource.org/licenses/MIT"
     },
     "externalDocs": {
-        "uri": "https://github.com/mermade/openapi-webconverter",
+        "uri": "https://github.com/mermade/openapi-webconverter"
     },
     "security": [],
     "tags": [

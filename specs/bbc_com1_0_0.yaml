@@ -2,6 +2,7 @@ openapi: 3.0.0
 servers:
   - url: 'http://programmes.api.bbc.com/nitro/api'
   - url: 'https://programmes.api.bbc.com/nitro/api'
+  - url: 'http://localhost:8080/nitro/api'
 info:
   contact:
     email: nitro@bbc.co.uk

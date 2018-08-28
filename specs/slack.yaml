@@ -1,6 +1,7 @@
 openapi: 3.0.0
 servers:
   - url: 'https://slack.com/api'
+  - url: 'http://localhost:8080/api'
 info:
   description: >-
     One way to interact with the Slack platform is its HTTP RPC-based Web API, a
