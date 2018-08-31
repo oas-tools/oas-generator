@@ -31,7 +31,7 @@ oasTools.initialize(oasDoc, app, function() {
     console.log("App running at http://localhost:" + serverPort);
     console.log("________________________________________________________________");
     if (options_object.docs !== false) {
-      console.log('Swagger-ui is available on http://localhost:' + serverPort + '/docs');
+      console.log('API docs (Swagger UI) available on http://localhost:' + serverPort + '/docs');
       console.log("________________________________________________________________");
     }
   });
