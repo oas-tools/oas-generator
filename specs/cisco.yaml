@@ -1,6 +1,7 @@
 openapi: 3.0.0
 servers:
   - url: 'https://api.cisco.com/'
+  - url: 'http://localhost:8080/'
 info:
   contact:
     email: os@cisco.com

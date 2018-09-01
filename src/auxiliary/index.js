@@ -20,7 +20,8 @@ var options_object = {
   loglevel: 'info',
   strict: false,
   router: true,
-  validator: true
+  validator: true,
+  docs: true
 };
 
 oasTools.configure(options_object);
@@ -29,6 +30,10 @@ oasTools.initialize(oasDoc, app, function() {
   http.createServer(app).listen(serverPort, function() {
     console.log("App running at http://localhost:" + serverPort);
     console.log("________________________________________________________________");
+    if (options_object.docs !== false) {
+      console.log('API docs (Swagger UI) available on http://localhost:' + serverPort + '/docs');
+      console.log("________________________________________________________________");
+    }
   });
 });
 

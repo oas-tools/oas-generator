@@ -186,7 +186,7 @@ function generateServer(file, cmd) {
             fs.appendFileSync(process.cwd() + '/controllers/' + controllerName + "Service.js", "'use strict'\n\n");
           }
           var function_string = "module.exports." + opId + " = function " + opId + " (req, res, next) {\n" + controllerVariable + "." + opId + "(req.swagger.params, res, next);\n};\n\n";
-          var function_string_service = "module.exports." + opId + " = function " + opId + " (req, res, next) {\nres.send({message: 'This is the raw controller for " + opId + "' });\n};\n\n";
+          var function_string_service = "module.exports." + opId + " = function " + opId + " (req, res, next) {\nres.send({message: 'This is the mockup controller for " + opId + "' });\n};\n\n";
           fs.appendFileSync(process.cwd() + '/controllers/' + controllerName + ".js", function_string);
           fs.appendFileSync(process.cwd() + '/controllers/' + controllerName + "Service.js", function_string_service);
         }

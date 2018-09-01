@@ -1,6 +1,7 @@
 openapi: 3.0.0
 servers:
   - url: 'https://api.github.com/'
+  - url: 'http://localhost:8080/'
 x-hasEquivalentPaths: true
 info:
   description: >

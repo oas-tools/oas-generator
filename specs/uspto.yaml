@@ -8,6 +8,7 @@ servers:
           - 'https'
           - 'http'
         default: 'https'
+  - url: 'http://localhost:8080/ds-api'
 info:
   description: >-
     The Data Set API (DSAPI) allows the public users to discover and search
