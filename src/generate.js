@@ -139,7 +139,7 @@ function generateServer(file, cmd) {
           "body-parser": "^1.18.3",
           "express": "^4.16.3",
           "js-yaml": "^3.3.0",
-          "oas-tools": "^1.0.1"
+          "oas-tools": "^2.0.0"
         }
       };
       fs.writeFileSync(process.cwd() + '/' + 'package.json', beautify(JSON.stringify(package_raw), {
