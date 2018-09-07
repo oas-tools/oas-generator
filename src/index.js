@@ -11,3 +11,7 @@ program
     generate.generateServer(file, cmd);
   })
   .parse(process.argv);
+
+if (process.argv.length < 3) {
+  program.help();
+}
