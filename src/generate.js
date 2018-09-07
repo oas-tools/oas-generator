@@ -72,6 +72,8 @@ function checkVersion(version) {
 function generateServer(file, cmd) {
   if (!file) {
     console.log("You must select an input specification file!");
+  } else if (semver.lt(process.version, "v8.0.0")) {
+    console.log("This program is not compatible with Node.js versions lower than v8.0.0 (current: " + process.version + ")");
   } else {
     try {
       try {
