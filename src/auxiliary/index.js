@@ -26,26 +26,6 @@ var options_object = {
 
 oasTools.configure(options_object);
 
-if (oasDoc.servers) {
-  var localServer = oasDoc.servers.find((server) => server.url.substr(0, 16) === 'http://localhost');
-  if (!localServer) {
-    console.log("No localhost server found in spec file, added for testing purposes");
-    var foundServer = oasDoc.servers[0];
-    console.log(foundServer.url.split('/').slice(3));
-    var basePath = '/' + foundServer.url.split('/').slice(3).join('/');
-    oasDoc.servers.push({
-      url: 'http://localhost:' + serverPort + basePath
-    });
-  }
-} else {
-  console.log("No servers found in spec file, added localhost server for testing purposes");
-  oasDoc.servers = [
-    {
-      url: 'http://localhost:' + serverPort
-    }
-  ]
-}
-
 oasTools.initialize(oasDoc, app, function() {
   http.createServer(app).listen(serverPort, function() {
     console.log("App running at http://localhost:" + serverPort);

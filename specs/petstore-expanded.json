@@ -3,9 +3,6 @@
   "servers": [
     {
       "url": "http://petstore.swagger.io/api"
-    },
-    {
-      "url": "http://localhost:8080/api"
     }
   ],
   "info": {

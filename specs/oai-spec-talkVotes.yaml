@@ -1,6 +1,4 @@
 openapi: 3.0.0
-servers:
-  - url: http://localhost:8080/api/v1
 info:
   description: API for managing votes on talks
   version: 1.0.0

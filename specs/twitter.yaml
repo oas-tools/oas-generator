@@ -1,7 +1,6 @@
 openapi: 3.0.0
 servers:
   - url: 'https://api.twitter.com/1.1'
-  - url: 'http://localhost:8080/1.1'
 info:
   contact:
     email: support@twitter.com
