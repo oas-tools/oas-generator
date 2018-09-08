@@ -4,6 +4,8 @@ var program = require('commander');
 var generate = require('./generate');
 
 program
+  .name('oas-generator')
+  .usage('<OAS v3 file in YAML or JSON>')
   .arguments('<file>')
   .option('-n, --projectName <projectName>', 'Name for the generated folder')
   .option('-z, --generateZip', 'Generate a zip and delete the folder')
@@ -11,3 +13,7 @@ program
     generate.generateServer(file, cmd);
   })
   .parse(process.argv);
+
+if (process.argv.length < 3) {
+  program.help();
+}

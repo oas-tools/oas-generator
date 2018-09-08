@@ -2,7 +2,6 @@ openapi: 3.0.0
 servers:
   - url: 'http://docker.local/v1.33'
   - url: 'https://docker.local/v1.33'
-  - url: 'http://localhost:8080/v.33'
 info:
   description: >
     The Engine API is an HTTP API served by Docker Engine. It is the API the

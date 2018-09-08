@@ -72,6 +72,8 @@ function checkVersion(version) {
 function generateServer(file, cmd) {
   if (!file) {
     console.log("You must select an input specification file!");
+  } else if (semver.lt(process.version, "v8.0.0")) {
+    console.log("This program is not compatible with Node.js versions lower than v8.0.0 (current: " + process.version + ")");
   } else {
     try {
       try {
@@ -139,7 +141,7 @@ function generateServer(file, cmd) {
           "body-parser": "^1.18.3",
           "express": "^4.16.3",
           "js-yaml": "^3.3.0",
-          "oas-tools": "^2.0.0"
+          "oas-tools": "^2.0.1"
         }
       };
       fs.writeFileSync(process.cwd() + '/' + 'package.json', beautify(JSON.stringify(package_raw), {

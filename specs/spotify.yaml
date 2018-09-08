@@ -1,7 +1,6 @@
 openapi: 3.0.0
 servers:
   - url: 'https://api.spotify.com/v1'
-  - url: 'http://localhost:8080/v1'
 info:
   title: Spotify
   version: v1
