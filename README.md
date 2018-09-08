@@ -24,9 +24,9 @@ npm install oas-generator -g
 ### 2.1\. Help
 
 ```bash
-$ oas-generator -help
+$ oas-generator --help
 
-Usage: index [options] <file>
+Usage:  oas-generator <OAS v3 file in YAML or JSON>
 
   Options:
 
