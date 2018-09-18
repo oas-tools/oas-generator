@@ -7,7 +7,9 @@ var fs = require('fs'),
 var express = require("express");
 var app = express();
 var bodyParser = require('body-parser');
-app.use(bodyParser.json());
+app.use(bodyParser.json({
+  strict: false
+}));
 var oasTools = require('oas-tools');
 var jsyaml = require('js-yaml');
 var serverPort = 8080;
