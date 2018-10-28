@@ -11,7 +11,7 @@ This module provides NodeJS RESTfull APIs scaffolding based OpenAPI 3.x specs us
 
 We have a 2 min. tutorial:
 
-<a href="https://youtu.be/kZLSGR9DCtg" alt="oas-generator introduction - Click to Watch!"><img src="https://i.imgur.com/fcqaWCq.jpg" align="center" width="300" alt="oas-generator introduction - Click to Watch!"></a>
+<a href="https://youtu.be/OZhtoXP2Gi4" alt="oas-generator introduction (v2.0.6) - Click to Watch!"><img src="https://i.imgur.com/fcqaWCq.jpg" align="center" width="300" alt="oas-generator introduction (v2.0.6) - Click to Watch!"></a>
 
 
 ## 1\. Install oas-generator
