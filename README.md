@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/isa-group/oas-generator.svg?branch=master)](https://travis-ci.org/isa-group/oas-generator)
 [![dependencies Status](https://david-dm.org/isa-group/oas-generator/status.svg)](https://david-dm.org/isa-group/oas-generator)
 [![codecov](https://codecov.io/gh/isa-group/oas-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/isa-group/oas-generator)
+[![Greenkeeper badge](https://badges.greenkeeper.io/isa-group/oas-generator.svg)](https://greenkeeper.io/)
 
 [![NPM](https://nodei.co/npm/oas-generator.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/oas-generator/)
 
@@ -64,7 +65,7 @@ Copyright 2018, [ISA Group](http://www.isa.us.es), [University of Sevilla](http:
 
 For technical inquiry please contact to [engineering team](./extra/team.md).
 
-[![ISA Group](http://www.isa.us.es/2.0/assets/img/theme/logo2.png)](http://www.isa.us.es) [![Greenkeeper badge](https://badges.greenkeeper.io/isa-group/oas-generator.svg)](https://greenkeeper.io/)
+[![ISA Group](http://www.isa.us.es/2.0/assets/img/theme/logo2.png)](http://www.isa.us.es)
 
 Licensed under the **Apache License, Version 2.0** (the "[License](./LICENSE)"); you may not use this file except in compliance with the License. You may obtain a copy of the License at apache.org/licenses/LICENSE-2.0
 

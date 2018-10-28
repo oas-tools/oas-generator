@@ -15,7 +15,7 @@ var config = require('./configurations'),
   logger = config.logger;
 var zipdir = require('zip-dir');
 var beautify = require('js-beautify').js;
-const semver = require('semver')
+const semver = require('semver');
 
 var schemaV3 = fs.readFileSync(path.join(__dirname, './schemas/openapi-3.0.yaml'), 'utf8');
 schemaV3 = jsyaml.safeLoad(schemaV3);
@@ -141,7 +141,7 @@ function generateServer(file, cmd) {
           "body-parser": "^1.18.3",
           "express": "^4.16.3",
           "js-yaml": "^3.3.0",
-          "oas-tools": "^2.0.3"
+          "oas-tools": "^2.1.0"
         }
       };
       fs.writeFileSync(process.cwd() + '/' + 'package.json', beautify(JSON.stringify(package_raw), {
