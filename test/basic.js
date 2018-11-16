@@ -61,6 +61,53 @@ describe('Server generation with a specified name', () => {
     });
 });
 
+describe('Server generation with a specified name and JSON oas-doc file', () => {
+    before(() => {
+        generate.configure(options_object);
+        if (fs.existsSync(path.join(__dirname, '..', cmd.projectName))) {
+            rimraf.sync(path.join(__dirname, '..', cmd.projectName));
+        }
+        const newCmd = cmd;
+        newCmd.json = true;
+        generate.generateServer(file, newCmd);
+    });
+
+    after(() => {
+        rimraf.sync(path.join(__dirname, '..', cmd.projectName));
+    });
+
+    it('Main folder is created', () => {
+        fs.existsSync(path.join(__dirname, '..', cmd.projectName)).should.equal(true);
+    });
+
+    it('Correct folders are created', () => {
+        fs.existsSync(path.join(__dirname, '..', cmd.projectName, '.oas-generator')).should.equal(true);
+        fs.existsSync(path.join(__dirname, '..', cmd.projectName, 'api')).should.equal(true);
+        fs.existsSync(path.join(__dirname, '..', cmd.projectName, 'controllers')).should.equal(true);
+    });
+
+    it('Each folder contains all necessary files', () => {
+        const oasGeneratorFolder = fs.readdirSync(path.join(__dirname, '..', cmd.projectName, '.oas-generator'));
+        oasGeneratorFolder.length.should.equal(1);
+        oasGeneratorFolder.includes('VERSION').should.equal(true);
+        const apiFolder = fs.readdirSync(path.join(__dirname, '..', cmd.projectName, 'api'));
+        apiFolder.length.should.equal(1);
+        apiFolder.includes('oas-doc.json').should.equal(true);
+        const controllersFolder = fs.readdirSync(path.join(__dirname, '..', cmd.projectName, 'controllers'));
+        controllersFolder.length.should.equal(4);
+        controllersFolder.includes('petsController.js').should.equal(true);
+        controllersFolder.includes('petsControllerService.js').should.equal(true);
+        controllersFolder.includes('petspetIdController.js').should.equal(true);
+        controllersFolder.includes('petspetIdControllerService.js').should.equal(true);
+    });
+
+    it('Correct files are created', () => {
+        fs.existsSync(path.join(__dirname, '..', cmd.projectName, 'index.js')).should.equal(true);
+        fs.existsSync(path.join(__dirname, '..', cmd.projectName, 'package.json')).should.equal(true);
+        fs.existsSync(path.join(__dirname, '..', cmd.projectName, 'README.md')).should.equal(true);
+    });
+});
+
 describe('Server generation without a specified name', () => {
     before(() => {
         generate.configure(options_object);
@@ -129,7 +176,7 @@ describe('Compressed server generation', () => {
             rimraf.sync(path.join(__dirname, '..', cmd.projectName + '.zip'));
         }
         const newCmd = cmd;
-        cmd.generateZip = true;
+        newCmd.generateZip = true;
         generate.generateServer(file, newCmd);
         // This timeout waits for the ZIP file to be created
         setTimeout(done, 1500);
