@@ -118,10 +118,15 @@ function generateServer(file, cmd) {
       if (!fs.existsSync('api')) {
         fs.mkdirSync('api');
       }
-      fs.writeFileSync('./api/oas-doc.yaml', beautify(JSON.stringify(oasDoc), {
-        indent_size: 2,
-        space_in_empty_paren: true
-      }));
+
+      if (cmd.json) {
+        fs.writeFileSync('./api/oas-doc.json', beautify(JSON.stringify(oasDoc), {
+          indent_size: 2,
+          space_in_empty_paren: true
+        }));
+      } else {
+        fs.writeFileSync('./api/oas-doc.yaml', jsyaml.safeDump(oasDoc));
+      }
 
       var package_raw = {
         "name": getValidName(oasDoc.info.title),
