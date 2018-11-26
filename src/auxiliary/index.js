@@ -22,8 +22,7 @@ var options_object = {
   loglevel: 'info',
   strict: false,
   router: true,
-  validator: true,
-  docs: true
+  validator: true
 };
 
 oasTools.configure(options_object);
