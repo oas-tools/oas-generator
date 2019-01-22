@@ -1,6 +1,6 @@
 {
   "name": "oas-generator",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "OAS code generator",
   "main": "src/index.js",
   "scripts": {

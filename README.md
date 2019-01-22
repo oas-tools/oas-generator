@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/isa-group/oas-generator.svg?branch=master)](https://travis-ci.org/isa-group/oas-generator)
 [![dependencies Status](https://david-dm.org/isa-group/oas-generator/status.svg)](https://david-dm.org/isa-group/oas-generator)
 [![codecov](https://codecov.io/gh/isa-group/oas-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/isa-group/oas-generator)
+[![Known Vulnerabilities](https://snyk.io/test/npm/oas-generator/badge.svg)](https://snyk.io/test/npm/oas-generator)
 [![Greenkeeper badge](https://badges.greenkeeper.io/isa-group/oas-generator.svg)](https://greenkeeper.io/)
 
 [![NPM](https://nodei.co/npm/oas-generator.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/oas-generator/)
