@@ -39,7 +39,7 @@
     "validator": "^11.0.0",
     "winston": "^3.0.0",
     "z-schema": "^4.0.0",
-    "zip-dir": "^1.0.2"
+    "zip-dir": "^2.0.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
