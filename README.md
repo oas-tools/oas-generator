@@ -1,3 +1,7 @@
+> **Warning**
+>
+> This package is now included in [OAS Tools CLI](https://github.com/oas-tools/oas-cli). Check the [docs](https://oas-tools.github.io/docs/cli) for more info.
+
 # oas-generator
 
 [![Build Status](https://travis-ci.org/isa-group/oas-generator.svg?branch=master)](https://travis-ci.org/isa-group/oas-generator)
